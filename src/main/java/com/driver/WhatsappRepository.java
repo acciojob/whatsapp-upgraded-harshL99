@@ -122,7 +122,7 @@ public class WhatsappRepository {
             userMessageMap.remove(user);
         }
 
-        groupMap.put(foundedGroup,userList);//Updating...
+//        groupMap.put(foundedGroup,userList);//Updating...
 
         int sum= foundedGroup.getNumberOfParticipants()+ foundedGroup.getNumberOfMessages();
 
