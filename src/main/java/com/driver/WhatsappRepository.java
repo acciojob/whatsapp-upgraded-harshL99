@@ -104,7 +104,17 @@ public class WhatsappRepository {
         if(foundedGroup==null) throw new Exception("User not found");
         if(idx==0) throw new Exception("Cannot remove admin");
         List<User> userList =groupMap.get(foundedGroup);
-        userList.remove(user);
+//        userList.remove(user);
+        int index=-1;
+        for(int i=0;i<userList.size();i++){
+            if(userList.get(i).getName().equals(user.getName()))
+            {
+                index=i;
+                break;
+            }
+        }
+        if(index>-1) userList.remove(index);
+
         foundedGroup.setNumberOfParticipants(foundedGroup.getNumberOfParticipants()-1);
 
         if(userMessageMap.containsKey(user)){
@@ -119,7 +129,7 @@ public class WhatsappRepository {
         for(Group group : groupMap.keySet()){
             sum+=group.getNumberOfMessages();
         }
-        return sum+2;
+        return sum;
     }
     public String findMessage(Date start,Date end,int k){
         return "";
