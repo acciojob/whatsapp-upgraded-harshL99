@@ -111,7 +111,7 @@ public class WhatsappRepository {
             foundedGroup.setNumberOfMessages(foundedGroup.getNumberOfMessages()-userMessageMap.get(user).size());
             userMessageMap.remove(user);
         }
-        groupMap.remove(foundedGroup);
+
         groupMap.put(foundedGroup,userList);//Updating...
 
         int sum= foundedGroup.getNumberOfParticipants()+ foundedGroup.getNumberOfMessages();
@@ -119,7 +119,7 @@ public class WhatsappRepository {
         for(Group group : groupMap.keySet()){
             sum+=group.getNumberOfMessages();
         }
-        return sum;
+        return sum+2;
     }
     public String findMessage(Date start,Date end,int k){
         return "";
