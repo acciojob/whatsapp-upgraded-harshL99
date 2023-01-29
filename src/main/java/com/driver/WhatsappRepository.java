@@ -111,6 +111,7 @@ public class WhatsappRepository {
             foundedGroup.setNumberOfMessages(foundedGroup.getNumberOfMessages()-userMessageMap.get(user).size());
             userMessageMap.remove(user);
         }
+        groupMap.remove(foundedGroup);
         groupMap.put(foundedGroup,userList);//Updating...
 
         int sum= foundedGroup.getNumberOfParticipants()+ foundedGroup.getNumberOfMessages();
